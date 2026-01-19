@@ -150,23 +150,23 @@ india_map_img = Image.open("data/india_map.jpg")
 
 STATE_POSITIONS = {
     "Jammu And Kashmir": (0.50, 0.09),
-    "Punjab": (0.48, 0.22),
+    "Punjab": (0.47, 0.22),
     "Haryana": (0.49, 0.27),
     "Delhi": (0.50, 0.28),
-    "Uttar Pradesh": (0.54, 0.34),
-    "Rajasthan": (0.44, 0.37),
-    "Gujarat": (0.44, 0.45),
+    "Uttar Pradesh": (0.60, 0.34),
+    "Rajasthan": (0.42, 0.37),
+    "Gujarat": (0.38, 0.45),
     "Madhya Pradesh": (0.50, 0.46),
-    "Bihar": (0.60, 0.37),
-    "West Bengal": (0.614, 0.45),
-    "Odisha": (0.58, 0.50),
+    "Bihar": (0.75, 0.37),
+    "West Bengal": (0.8, 0.45),
+    "Odisha": (0.75, 0.50),
     "Maharashtra": (0.46, 0.58),
-    "Telangana": (0.51, 0.62),
-    "Andhra Pradesh": (0.51, 0.72),
-    "Karnataka": (0.48, 0.72),
-    "Tamil Nadu": (0.51, 0.84),
-    "Kerala": (0.49, 0.82),
-    "Assam": (0.676, 0.35)
+    "Telangana": (0.55, 0.62),
+    "Andhra Pradesh": (0.55, 0.72),
+    "Karnataka": (0.46, 0.72),
+    "Tamil Nadu": (0.55, 0.82),
+    "Kerala": (0.47, 0.82),
+    "Assam": (0.953, 0.35)
 }
 
 map_df = state_summary.copy()
@@ -185,17 +185,28 @@ fig = px.scatter(
 )
 
 fig.update_xaxes(visible=False, range=[0, 1],fixedrange=True)
-fig.update_yaxes(visible=False, range=[1, 0],fixedrange=True)
+fig.update_yaxes(
+    visible=False,
+    range=[1, 0],
+    fixedrange=True,
+    scaleanchor="x",
+    scaleratio=1
+)
+
 fig.add_layout_image(dict(source=india_map_img, xref="paper", yref="paper", x=0.4, y=1, sizex=1, sizey=1, layer="below"))
-fig.update_layout(margin=dict(l=0, r=0, t=30, b=0))
+fig.update_layout(
+    autosize=False,
+    margin=dict(l=0, r=0, t=30, b=0)
+)
+
 st.plotly_chart(
     fig,
-    use_container_width=True,
     config={
         "displayModeBar": False,
         "scrollZoom": False
     }
 )
+
 
 
 st.header("🧠 District-Level Enrolment Pattern Discovery")
