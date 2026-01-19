@@ -149,24 +149,24 @@ state_summary = df.groupby("state")["total_enrolments"].sum().reset_index()
 india_map_img = Image.open("data/india_map.jpg")
 
 STATE_POSITIONS = {
-    "Jammu And Kashmir": (0.48, 0.12),
-    "Punjab": (0.46, 0.22),
-    "Haryana": (0.47, 0.27),
-    "Delhi": (0.48, 0.28),
-    "Uttar Pradesh": (0.52, 0.34),
+    "Jammu And Kashmir": (0.50, 0.09),
+    "Punjab": (0.48, 0.22),
+    "Haryana": (0.49, 0.27),
+    "Delhi": (0.50, 0.28),
+    "Uttar Pradesh": (0.54, 0.34),
     "Rajasthan": (0.44, 0.37),
-    "Gujarat": (0.43, 0.46),
+    "Gujarat": (0.44, 0.45),
     "Madhya Pradesh": (0.50, 0.46),
-    "Bihar": (0.56, 0.37),
-    "West Bengal": (0.57, 0.45),
-    "Odisha": (0.56, 0.50),
+    "Bihar": (0.60, 0.37),
+    "West Bengal": (0.614, 0.45),
+    "Odisha": (0.58, 0.50),
     "Maharashtra": (0.46, 0.58),
-    "Telangana": (0.50, 0.62),
-    "Andhra Pradesh": (0.50, 0.72),
-    "Karnataka": (0.46, 0.72),
-    "Tamil Nadu": (0.49, 0.84),
-    "Kerala": (0.47, 0.82),
-    "Assam": (0.616, 0.35)
+    "Telangana": (0.51, 0.62),
+    "Andhra Pradesh": (0.51, 0.72),
+    "Karnataka": (0.48, 0.72),
+    "Tamil Nadu": (0.51, 0.84),
+    "Kerala": (0.49, 0.82),
+    "Assam": (0.676, 0.35)
 }
 
 map_df = state_summary.copy()
