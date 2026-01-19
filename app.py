@@ -184,8 +184,8 @@ fig = px.scatter(
     hover_data={"x": False, "y": False, "total_enrolments": ":,"}
 )
 
-fig.update_xaxes(visible=False, range=[0, 1])
-fig.update_yaxes(visible=False, range=[1, 0])
+fig.update_xaxes(visible=False, range=[0, 1],fixedrange=True)
+fig.update_yaxes(visible=False, range=[1, 0],fixedrange=True)
 fig.add_layout_image(dict(source=india_map_img, xref="paper", yref="paper", x=0.4, y=1, sizex=1, sizey=1, layer="below"))
 fig.update_layout(margin=dict(l=0, r=0, t=30, b=0))
 st.plotly_chart(
